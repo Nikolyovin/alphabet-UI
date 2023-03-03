@@ -8,22 +8,22 @@ import { NavigationContainer } from '@react-navigation/native'
 const Stack = createNativeStackNavigator()
 
 const Navigation = () => {
-	return (
-		<NavigationContainer>
-			<Stack.Navigator>
-				<Stack.Screen
-					name="Start"
-					component={StartScreen}
-					options={{ title: 'Старт' }}
-				/>
-				<Stack.Screen
-					name="Home"
-					component={HomeScreen}
-					options={{ title: 'Меню' }}
-				/>
-			</Stack.Navigator>
-		</NavigationContainer>
-	)
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='Start'
+          component={StartScreen}
+          // options={{ title: 'Старт' }}
+        />
+        <Stack.Screen
+          name='Home'
+          component={HomeScreen}
+          options={{ title: 'Меню' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
 export default Navigation
