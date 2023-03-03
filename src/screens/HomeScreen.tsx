@@ -20,14 +20,24 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
   wrap: {
+    paddingHorizontal: 20,
+    paddingVertical: 30,
     backgroundColor: '#cfd8dc',
+    flexDirection: 'row',
+    height: '100%',
+    justifyContent: 'space-between',
   },
   buttonWrap: {
     width: '40%',
+    height: '10%',
+    paddingVertical: 5,
+    backgroundColor: 'white',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   picture: {
-    width: 100,
-    height: 100,
+    width: 50,
+    height: 50,
     backgroundColor: 'green',
   },
   titleButton: {},
