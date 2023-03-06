@@ -4,8 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from './HomeScreen'
 import StartScreen from './StartScreen'
 import { NavigationContainer } from '@react-navigation/native'
-import LetterScreen from './AlphabetScreen'
 import AlphabetScreen from './AlphabetScreen'
+import LetterScreen from './LetterScreen'
 
 const Stack = createNativeStackNavigator()
 
