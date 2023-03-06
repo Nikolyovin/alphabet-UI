@@ -9,27 +9,16 @@ import LetterScreen from './AlphabetScreen'
 const Stack = createNativeStackNavigator()
 
 const Navigation = () => {
-	return (
-		<NavigationContainer>
-			<Stack.Navigator>
-				<Stack.Screen
-					name="Start"
-					component={StartScreen}
-					// options={{ title: 'Старт' }}
-				/>
-				<Stack.Screen
-					name="Home"
-					component={HomeScreen}
-					options={{ title: 'Меню' }}
-				/>
-				<Stack.Screen
-					name="Alphabet"
-					component={LetterScreen}
-					options={{ title: 'Алфавит' }}
-				/>
-			</Stack.Navigator>
-		</NavigationContainer>
-	)
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name='Start' component={StartScreen} options={{ title: 'Старт' }} />
+                <Stack.Screen name='Home' component={HomeScreen} options={{ title: 'Меню' }} />
+                <Stack.Screen name='Alphabet' component={HomeScreen} options={{ title: 'Алфавит' }} />
+                <Stack.Screen name='Letter' component={LetterScreen} options={{ title: 'Буква' }} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
 }
 
 export default Navigation
