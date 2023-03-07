@@ -1,6 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
-import SectionGame from '../components/SectionGame'
 import Letter from '../components/Letter'
 
 const AlphabetScreen = ({ navigation }: any) => {
