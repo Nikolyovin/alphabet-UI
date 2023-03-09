@@ -1,11 +1,13 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import img from '../../assets/frog.png'
+import img from '../../assets/frog.PNG'
 
 const StartScreen = ({ navigation }: any) => {
     return (
         <View style={styles.wrap}>
-            <Text style={styles.title}>Алфавит и другие игры для самых маленьких</Text>
+            <View style={styles.titleWrap}>
+                <Text style={styles.title}>Алфавит для малышей</Text>
+            </View>
 
             <Image style={styles.img} source={img} />
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
@@ -19,20 +21,30 @@ export default StartScreen
 
 const styles = StyleSheet.create({
     wrap: {
-        backgroundColor: '#64b5f6',
+        // backgroundColor: '#64b5f6',
+        backgroundColor: 'white',
         height: '100%',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingVertical: 100,
-        paddingHorizontal: 20
+        paddingBottom: 50
     },
     // titleWrap: {
     //   textAlign: 'center',
     // },
     title: {
-        fontSize: 26,
+        paddingTop: 100,
+        paddingBottom: 50,
+        paddingHorizontal: 20,
+        fontSize: 32,
         color: 'white',
         textAlign: 'center'
+
+        // jistyfy
+    },
+    titleWrap: {
+        backgroundColor: '#689f38',
+        borderBottomEndRadius: 75,
+        borderBottomStartRadius: 75
     },
     img: {
         flex: 1,
@@ -41,7 +53,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     button: {
-        backgroundColor: 'white',
+        backgroundColor: '#689f38',
         borderRadius: 50,
         width: 150,
         height: 50,
@@ -50,6 +62,6 @@ const styles = StyleSheet.create({
     },
     textButton: {
         fontSize: 20,
-        color: '#64b5f6'
+        color: 'white'
     }
 })
