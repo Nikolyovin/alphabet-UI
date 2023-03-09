@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import img from '../../assets/frog.PNG'
+import img from '../../assets/frog.png'
 
 const StartScreen = ({ navigation }: any) => {
     return (
