@@ -5,20 +5,20 @@ const LetterScreen = () => {
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.buttonLetter}>
-                <View style={styles.picture}> </View>
+                <View style={styles.picture}></View>
             </TouchableOpacity>
             <View style={styles.wordsWrap}>
                 <TouchableOpacity style={styles.buttonWord}>
-                    <View style={styles.picture}> </View>
+                    <View style={styles.picture}></View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonWord}>
-                    <View style={styles.picture}> </View>
+                    <View style={styles.picture}></View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonWord}>
-                    <View style={styles.picture}> </View>
+                    <View style={styles.picture}></View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonWord}>
-                    <View style={styles.picture}> </View>
+                    <View style={styles.picture}></View>
                 </TouchableOpacity>
             </View>
         </View>

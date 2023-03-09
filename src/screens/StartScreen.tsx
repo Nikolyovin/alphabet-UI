@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import img from '../../assets/frog.PNG'
+import img from '../../assets/IMG_4304.png'
 
 const StartScreen = ({ navigation }: any) => {
     return (
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingBottom: 50
+        paddingBottom: 200
     },
     // titleWrap: {
     //   textAlign: 'center',
@@ -48,15 +48,15 @@ const styles = StyleSheet.create({
     },
     img: {
         flex: 1,
-        width: 200,
-        height: 200,
+        width: 250,
+        height: 250,
         resizeMode: 'contain'
     },
     button: {
         backgroundColor: '#689f38',
         borderRadius: 50,
-        width: 150,
-        height: 50,
+        width: 200,
+        height: 60,
         justifyContent: 'center',
         alignItems: 'center'
     },
