@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     //   textAlign: 'center',
     // },
     title: {
-        paddingTop: 100,
+        paddingTop: 80,
         paddingBottom: 50,
         paddingHorizontal: 20,
         fontSize: 32,

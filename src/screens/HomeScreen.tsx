@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         paddingVertical: 30,
         // backgroundColor: '#cfd8dc',
         flexDirection: 'row',
-        height: '100%',
+        // height: '100%',
         justifyContent: 'space-between',
         flexWrap: 'wrap'
     },
