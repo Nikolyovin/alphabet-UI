@@ -35,9 +35,10 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     img: {
-        width: '50%',
-        height: '50%'
-        // marginTop: 30,
+        flex: 1,
+        width: 200,
+        height: 200,
+        resizeMode: 'contain'
     },
     button: {
         backgroundColor: 'white',
