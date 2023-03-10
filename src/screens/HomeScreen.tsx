@@ -1,10 +1,12 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import SectionGame from '../components/SectionGame'
+import Header from '../components/Header'
 
 const HomeScreen = ({ navigation }: any) => {
     return (
         <View style={styles.wrap}>
+            <Header />
             {/* <Text style={styles.title}></Text> */}
             <SectionGame navigation={navigation} />
             <SectionGame navigation={navigation} />

@@ -17,15 +17,14 @@ export default SectionGame
 const styles = StyleSheet.create({
     wrap: {},
     sectionWrap: {
-        width: '45%',
-        height: 150,
-        paddingVertical: 20,
         backgroundColor: '#689f38',
-        justifyContent: 'space-between',
-        alignItems: 'center',
         borderRadius: 10,
-        marginBottom: 15,
-        marginLeft: 15
+        width: '80%',
+        height: 60,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderBottomWidth: 3,
+        borderColor: '#2e7d32'
     },
     picture: {
         width: 80,
