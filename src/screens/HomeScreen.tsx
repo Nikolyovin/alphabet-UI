@@ -20,13 +20,14 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
     wrap: {
-        paddingHorizontal: 30,
-        paddingVertical: 30,
+        // paddingHorizontal: 30,
+        // paddingVertical: 30,
         // backgroundColor: '#cfd8dc',
-        flexDirection: 'row',
+        // flexDirection: 'row',
         // height: '100%',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap'
+        // justifyContent: 'space-between',
+        // flexWrap: 'wrap'
+        alignItems: 'center'
     },
     title: {}
 })

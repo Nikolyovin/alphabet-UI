@@ -15,7 +15,6 @@ const SectionGame = ({ navigation }: any) => {
 export default SectionGame
 
 const styles = StyleSheet.create({
-    wrap: {},
     sectionWrap: {
         backgroundColor: '#689f38',
         borderRadius: 10,
@@ -24,13 +23,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderBottomWidth: 3,
-        borderColor: '#2e7d32'
+        borderColor: '#2e7d32',
+        flexDirection: 'row',
+        marginBottom: 5
     },
     picture: {
-        width: 80,
-        height: 80,
-        backgroundColor: 'white',
-        borderRadius: 10
+        width: 15,
+        height: 15,
+        backgroundColor: 'white'
     },
     titleSection: {
         color: 'white'
