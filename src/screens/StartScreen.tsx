@@ -8,6 +8,7 @@ const StartScreen = ({ navigation }: any) => {
             <View style={styles.titleWrap}>
                 <Text style={styles.title}>Алфавит для малышей</Text>
             </View>
+            <View style={styles.titleCircle}></View>
 
             <Image style={styles.img} source={img} />
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
@@ -22,18 +23,18 @@ export default StartScreen
 const styles = StyleSheet.create({
     wrap: {
         // backgroundColor: '#64b5f6',
-        backgroundColor: 'white',
+        backgroundColor: '#66bb6a',
         height: '100%',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingBottom: 200
+        paddingBottom: 100
     },
     // titleWrap: {
     //   textAlign: 'center',
     // },
     title: {
         paddingTop: 80,
-        paddingBottom: 50,
+        // paddingBottom: 10,
         paddingHorizontal: 20,
         fontSize: 32,
         color: 'white',
@@ -42,9 +43,17 @@ const styles = StyleSheet.create({
         // jistyfy
     },
     titleWrap: {
-        backgroundColor: '#689f38',
-        borderBottomEndRadius: 75,
-        borderBottomStartRadius: 75
+        width: '100%',
+        backgroundColor: '#2e7d32'
+        // borderBottomEndRadius: 75,
+        // borderBottomStartRadius: 75
+    },
+    titleCircle: {
+        height: 50,
+        width: '100%',
+        backgroundColor: '#2e7d32',
+        borderBottomEndRadius: '1000%',
+        borderBottomStartRadius: '1000%'
     },
     img: {
         flex: 1,
@@ -54,11 +63,13 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#689f38',
-        borderRadius: 50,
-        width: 200,
+        borderRadius: 10,
+        width: '80%',
         height: 60,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        borderBottomWidth: 3,
+        borderColor: '#2e7d32'
     },
     textButton: {
         fontSize: 20,
