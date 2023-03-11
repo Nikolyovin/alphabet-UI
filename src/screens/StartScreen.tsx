@@ -1,13 +1,14 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import img from '../../assets/IMG_4304.png'
+// import img from '../../assets/abc-letters.png'
 import Header from '../components/Header'
+import { COLORS } from '../common/constants'
 
 const StartScreen = ({ navigation }: any) => {
     return (
         <View style={styles.wrap}>
             <Header />
-
             <Image style={styles.img} source={img} />
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                 <Text style={styles.textButton}>Старт</Text>
@@ -21,7 +22,7 @@ export default StartScreen
 const styles = StyleSheet.create({
     wrap: {
         // backgroundColor: '#64b5f6',
-        backgroundColor: '#66bb6a',
+        backgroundColor: COLORS.FON,
         height: '100%',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -37,14 +38,14 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     button: {
-        backgroundColor: '#689f38',
+        backgroundColor: COLORS.MAIN,
         borderRadius: 10,
         width: '80%',
         height: 60,
         justifyContent: 'center',
         alignItems: 'center',
         borderBottomWidth: 3,
-        borderColor: '#2e7d32'
+        borderColor: '#3d9635'
     },
     textButton: {
         fontSize: 20,

@@ -25,15 +25,16 @@ const styles = StyleSheet.create({
     },
     titleWrap: {
         width: '100%',
-        backgroundColor: '#2e7d32'
+        backgroundColor: '#9cbd42'
         // borderBottomEndRadius: 75,
         // borderBottomStartRadius: 75
     },
     titleCircle: {
         height: 50,
         width: '100%',
-        backgroundColor: '#2e7d32',
-        borderBottomEndRadius: '1000%',
-        borderBottomStartRadius: '1000%'
+        backgroundColor: '#9cbd42',
+        borderBottomEndRadius: 50,
+        borderBottomStartRadius: 50
+        // borderRadius: 50 / 10
     }
 })

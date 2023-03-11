@@ -5,14 +5,14 @@ import Navigation from './src/screens/Navigation'
 import StartScreen from './src/screens/StartScreen'
 
 export default function App() {
-  return <Navigation />
+    return <Navigation />
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 })
