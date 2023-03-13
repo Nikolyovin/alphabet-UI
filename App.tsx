@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
-import HomeScreen from './src/screens/HomeScreen'
 import Navigation from './src/screens/Navigation'
-import StartScreen from './src/screens/StartScreen'
+import { Provider } from 'react-redux'
+import { store } from './src/store'
 
 export default function App() {
-    return <Navigation />
+    return (
+        <Provider store={store}>
+            <Navigation />
+        </Provider>
+    )
 }
 
 const styles = StyleSheet.create({
