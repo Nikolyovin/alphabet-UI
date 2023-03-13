@@ -5,27 +5,33 @@ import img from '../../assets/a.png'
 import sharp from '../../assets/sharp.jpg'
 import pineapple from '../../assets/pineapple.jpg'
 import bus from '../../assets/bus.jpg'
+import ModalForPicture from '../components/ModalForPicture'
+import { useActions } from '../hooks/actions'
 
-const LetterScreen = () => {
+const LetterScreen: React.FC = () => {
+    const { isOpenModalForPicture } = useActions()
+
+    const TouchPicture: () => void = () => {
+        isOpenModalForPicture(true)
+    }
+
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.buttonLetter}>
                 <Image source={img} style={styles.letterPicture} />
             </TouchableOpacity>
             <View style={styles.wordsWrap}>
-                <TouchableOpacity style={styles.buttonWord}>
+                <TouchableOpacity style={styles.buttonWord} onPress={TouchPicture}>
                     <Image source={sharp} style={styles.picture} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonWord}>
+                <TouchableOpacity style={styles.buttonWord} onPress={TouchPicture}>
                     <Image source={pineapple} style={styles.picture} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonWord}>
+                <TouchableOpacity style={styles.buttonWord} onPress={TouchPicture}>
                     <Image source={bus} style={styles.picture} />
                 </TouchableOpacity>
-                {/* <TouchableOpacity style={styles.buttonWord}>
-                    <View style={styles.picture}></View>
-                </TouchableOpacity> */}
             </View>
+            <ModalForPicture />
         </View>
     )
 }
