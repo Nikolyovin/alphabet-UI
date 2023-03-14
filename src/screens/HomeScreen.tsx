@@ -8,7 +8,7 @@ import Layout from '../components/Layout'
 const HomeScreen = ({ navigation }: any) => {
     return (
         <View style={styles.wrap}>
-            <Header title={'Выбирай режим игры'} />
+            <Header title={'Выбери игру'} />
             <View style={styles.list}>
                 <SectionGame navigation={navigation} />
                 <SectionGame navigation={navigation} />
