@@ -8,7 +8,7 @@ import { COLORS } from '../common/constants'
 const StartScreen = ({ navigation }: any) => {
     return (
         <View style={styles.wrap}>
-            <Header />
+            <Header title={'Учись играя'} />
             <Image style={styles.img} source={img} />
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                 <Text style={styles.textButton}>Старт</Text>
