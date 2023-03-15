@@ -1,15 +1,26 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import img from '../../assets/IMG_4304.png'
 // import img from '../../assets/abc-letters.png'
 import Header from '../components/Header'
 import { COLORS } from '../common/constants'
 
 const StartScreen = ({ navigation }: any) => {
+    const urlImg = 'http://95.83.149.6:5000/334d96db-1a15-4e2c-a71a-c0ef1da06329.jpg'
+    const getReq = async () => {
+        let response = await fetch('http://95.83.149.6:5000/api/letters')
+        let result = await response.json()
+        console.log('result', result)
+    }
+
+    useEffect(() => {
+        getReq()
+    }, [])
+
     return (
         <View style={styles.wrap}>
             <Header title={'Учись играя'} />
-            <Image style={styles.img} source={img} />
+            <Image style={{ width: 250, height: 250, borderWidth: 2, borderColor: 'red' }} source={{ uri: urlImg }} />
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                 <Text style={styles.textButton}>Старт</Text>
             </TouchableOpacity>
