@@ -6,21 +6,25 @@ import Header from '../components/Header'
 import { COLORS } from '../common/constants'
 
 const StartScreen = ({ navigation }: any) => {
-    const urlImg = 'http://95.83.149.6:5000/334d96db-1a15-4e2c-a71a-c0ef1da06329.jpg'
-    const getReq = async () => {
-        let response = await fetch('http://95.83.149.6:5000/api/letters')
-        let result = await response.json()
-        console.log('result', result)
-    }
+    // const urlImg = 'http://95.83.149.6:5000/271614ac-ce95-41b4-b725-18ac005e7db5.jpg'
+    // const getReq = async () => {
+    //     let response = await fetch('http://95.83.149.6:5000/api/letters')
+    //     let result = await response.json()
+    //     console.log('result', result)
+    // }
 
-    useEffect(() => {
-        getReq()
-    }, [])
+    // useEffect(() => {
+    //     getReq()
+    // }, [])
 
     return (
         <View style={styles.wrap}>
             <Header title={'Учись играя'} />
-            <Image style={{ width: 250, height: 250, borderWidth: 2, borderColor: 'red' }} source={{ uri: urlImg }} />
+            <Image
+                // style={{ width: 250, height: 250, borderWidth: 2, borderColor: 'red' }}
+                source={img}
+                style={styles.img}
+            />
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                 <Text style={styles.textButton}>Старт</Text>
             </TouchableOpacity>
@@ -44,8 +48,8 @@ const styles = StyleSheet.create({
     // },
     img: {
         flex: 1,
-        width: 250,
-        height: 250,
+        width: 300,
+        height: 300,
         resizeMode: 'contain'
     },
     button: {

@@ -31,16 +31,17 @@ const styles = StyleSheet.create({
     titleWrap: {
         width: '100%',
         backgroundColor: COLORS.MAIN,
-        borderBottomEndRadius: '50%',
-        borderBottomStartRadius: '50%'
+        borderBottomEndRadius: 100,
+        borderBottomStartRadius: 100
+        // borderBottomEndRadius:
         //borderRadius: '100%'
-    },
-    titleCircle: {
-        height: 50,
-        width: '100%',
-        backgroundColor: '#9cbd42',
-        borderBottomEndRadius: 150,
-        borderBottomStartRadius: 150
-        // borderRadius: 50 / 10
     }
+    // titleCircle: {
+    //     height: 50,
+    //     width: '100%',
+    //     backgroundColor: '#9cbd42',
+    //     borderBottomEndRadius: 150,
+    //     borderBottomStartRadius: 150
+    //     // borderRadius: 50 / 10
+    // }
 })

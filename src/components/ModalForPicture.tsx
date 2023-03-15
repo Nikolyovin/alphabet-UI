@@ -1,7 +1,7 @@
-import { Modal, StyleSheet, View, Text } from 'react-native'
+import { Modal, StyleSheet, View, TouchableOpacity } from 'react-native'
 import React, { FC, useState, useEffect } from 'react'
 import { useAppSelector } from '../hooks/redux'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+// import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useActions } from '../hooks/actions'
 
 const ModalForPicture: FC = () => {
@@ -13,20 +13,20 @@ const ModalForPicture: FC = () => {
     }
 
     return (
-        // <View style={styles.centeredView}>
-        <Modal
-            animationType='fade'
-            transparent={true}
-            visible={isModalForPicture}
-            // onShow={onShow}
-        >
-            <View style={styles.centeredView}>
-                <TouchableOpacity style={styles.touch} onPress={onTouch}>
-                    <View style={styles.picture}></View>
-                </TouchableOpacity>
-            </View>
-        </Modal>
-        // </View>
+        <View>
+            <Modal
+                animationType='fade'
+                transparent={true}
+                visible={isModalForPicture}
+                // onShow={onShow}
+            >
+                <View style={styles.centeredView}>
+                    <TouchableOpacity style={styles.touch} onPress={onTouch}>
+                        <View style={styles.picture}></View>
+                    </TouchableOpacity>
+                </View>
+            </Modal>
+        </View>
     )
 }
 
