@@ -1,11 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { ILetter } from '../../types/types'
 
 type InitialStateType = {
     isModalForPicture: boolean
+    letters: ILetter[]
+    isLoading: boolean
 }
 
 const initialState: InitialStateType = {
-    isModalForPicture: false
+    isModalForPicture: false,
+    letters: [],
+    isLoading: false
 }
 
 export const alphabetSlice = createSlice({
@@ -14,6 +19,13 @@ export const alphabetSlice = createSlice({
     reducers: {
         isOpenModalForPicture(state, action: PayloadAction<boolean>) {
             state.isModalForPicture = action.payload
+        },
+        getLettersFetch(state) {
+            state.isLoading = true
+        },
+        getCatsSuccess(state, action: PayloadAction<ILetter[]>) {
+            state.letters = action.payload
+            state.isLoading = false
         }
     }
 })
