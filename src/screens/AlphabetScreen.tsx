@@ -18,7 +18,7 @@ const AlphabetScreen = ({ navigation }: any) => {
         <View style={styles.wrap}>
             {letters.length &&
                 letters.map(({ pictureLetter, _id }) => (
-                    <Letter navigation={navigation} pictureLetter={pictureLetter} key={_id} />
+                    <Letter navigation={navigation} pictureLetter={pictureLetter} key={_id} _id={_id} />
                 ))}
         </View>
     )

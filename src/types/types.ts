@@ -1,4 +1,4 @@
-export type ILetter = {
+export interface ILetter {
     _id: string
     letter: string
     voiceLetter: string

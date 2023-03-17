@@ -1,38 +1,43 @@
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { COLORS } from '../common/constants'
+import { COLORS, URL_SERVER } from '../common/constants'
 import img from '../../assets/a.png'
 import sharp from '../../assets/sharp.jpg'
 import pineapple from '../../assets/pineapple.jpg'
 import bus from '../../assets/bus.jpg'
 import ModalForPicture from '../components/ModalForPicture'
 import { useActions } from '../hooks/actions'
+import { useAppSelector } from '../hooks/redux'
+import { ILetter } from '../types/types'
 
 const LetterScreen: React.FC = () => {
+    const { currentLetter, letters } = useAppSelector(state => state.alphabet)
+
     const { isOpenModalForPicture } = useActions()
 
     const TouchPicture: () => void = () => {
         isOpenModalForPicture(true)
     }
 
+    const filteredLetters: ILetter = letters.find(({ _id }) => _id === currentLetter)
+
+    const { pictureLetter, picture1, picture2, picture3 } = filteredLetters
+
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.buttonLetter}>
-                <Image source={img} style={styles.letterPicture} />
+                <Image source={{ uri: `${URL_SERVER}${pictureLetter}` }} style={styles.letterPicture} />
             </TouchableOpacity>
             <View style={styles.wordsWrap}>
                 <TouchableOpacity style={styles.buttonWord} onPress={TouchPicture}>
-                    <Image source={sharp} style={styles.picture} />
+                    <Image source={{ uri: `${URL_SERVER}${picture1}` }} style={styles.picture} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonWord} onPress={TouchPicture}>
-                    <Image source={pineapple} style={styles.picture} />
+                    <Image source={{ uri: `${URL_SERVER}${picture2}` }} style={styles.picture} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonWord} onPress={TouchPicture}>
-                    <Image source={bus} style={styles.picture} />
+                    <Image source={{ uri: `${URL_SERVER}${picture3}` }} style={styles.picture} />
                 </TouchableOpacity>
-                {/* <TouchableOpacity style={styles.buttonWord} onPress={TouchPicture}>
-                    <Image source={bus} style={styles.picture} />
-                </TouchableOpacity> */}
             </View>
             <ModalForPicture />
         </View>

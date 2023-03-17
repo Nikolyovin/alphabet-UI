@@ -1,19 +1,25 @@
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import SectionGame from '../components/SectionGame'
-import img from '../../assets/a.png'
-import img2 from '../../assets/b.png'
-import img3 from '../../assets/в.png'
+import { useActions } from '../hooks/actions'
 
 type PropsType = {
     navigation: any
     pictureLetter: string
+    _id: string
 }
 
-const Letter: React.FC<PropsType> = ({ navigation, pictureLetter }) => {
+const Letter: React.FC<PropsType> = ({ navigation, pictureLetter, _id }) => {
+    const { setCurrentLetter } = useActions()
+
+    const onTouchLetter: (letterId: string) => void = letterId => {
+        navigation.navigate('Letter')
+        setCurrentLetter(letterId)
+    }
+
     return (
         <View style={styles.wrap}>
-            <TouchableOpacity onPress={() => navigation.navigate('Letter')} style={styles.letterWrap}>
+            <TouchableOpacity onPress={() => onTouchLetter(_id)} style={styles.letterWrap}>
                 <Image source={{ uri: `http://95.83.149.6:5000/${pictureLetter}` }} style={styles.img} />
             </TouchableOpacity>
         </View>

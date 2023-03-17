@@ -5,12 +5,14 @@ type InitialStateType = {
     isModalForPicture: boolean
     letters: ILetter[]
     isLoading: boolean
+    currentLetter: string
 }
 
 const initialState: InitialStateType = {
     isModalForPicture: false,
     letters: [],
-    isLoading: false
+    isLoading: false,
+    currentLetter: ''
 }
 
 export const alphabetSlice = createSlice({
@@ -26,6 +28,9 @@ export const alphabetSlice = createSlice({
         getLettersSuccess(state, action: PayloadAction<ILetter[]>) {
             state.letters = action.payload
             state.isLoading = false
+        },
+        setCurrentLetter(state, action: PayloadAction<string>) {
+            state.currentLetter = action.payload
         }
     }
 })
