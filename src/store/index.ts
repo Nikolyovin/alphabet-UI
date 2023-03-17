@@ -1,5 +1,6 @@
 import createSagaMiddleware from '@redux-saga/core'
 import { configureStore } from '@reduxjs/toolkit'
+import letterSaga from './alphabet/alphabet.saga'
 // import { setupListeners } from '@reduxjs/toolkit/dist/query'
 import { alphabetReducer } from './alphabet/alphabet.slice'
 
@@ -11,6 +12,8 @@ export const store = configureStore({
     },
     middleware: [saga]
 })
+
+saga.run(letterSaga)
 
 // setupListeners(store.dispatch)
 

@@ -23,7 +23,7 @@ export const alphabetSlice = createSlice({
         getLettersFetch(state) {
             state.isLoading = true
         },
-        getCatsSuccess(state, action: PayloadAction<ILetter[]>) {
+        getLettersSuccess(state, action: PayloadAction<ILetter[]>) {
             state.letters = action.payload
             state.isLoading = false
         }

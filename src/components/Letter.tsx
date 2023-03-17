@@ -7,13 +7,14 @@ import img3 from '../../assets/в.png'
 
 type PropsType = {
     navigation: any
+    pictureLetter: string
 }
 
-const Letter: React.FC<PropsType> = ({ navigation }) => {
+const Letter: React.FC<PropsType> = ({ navigation, pictureLetter }) => {
     return (
         <View style={styles.wrap}>
             <TouchableOpacity onPress={() => navigation.navigate('Letter')} style={styles.letterWrap}>
-                <Image source={img2} style={styles.img} />
+                <Image source={{ uri: `http://95.83.149.6:5000/${pictureLetter}` }} style={styles.img} />
             </TouchableOpacity>
         </View>
     )
@@ -26,7 +27,9 @@ const styles = StyleSheet.create({
     letterWrap: {},
     img: {
         height: 70,
-        width: 70
+        width: 70,
+        borderWidth: 2,
+        borderColor: 'green'
         // backgroundColor: 'blue'
     }
 })
