@@ -2,6 +2,7 @@ import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import SectionGame from '../components/SectionGame'
 import { useActions } from '../hooks/actions'
+import { URL_SERVER } from '../common/constants'
 
 type PropsType = {
     navigation: any
@@ -20,7 +21,7 @@ const Letter: React.FC<PropsType> = ({ navigation, pictureLetter, _id }) => {
     return (
         <View style={styles.wrap}>
             <TouchableOpacity onPress={() => onTouchLetter(_id)} style={styles.letterWrap}>
-                <Image source={{ uri: `http://95.83.149.6:5000/${pictureLetter}` }} style={styles.img} />
+                <Image source={{ uri: `${URL_SERVER}/${pictureLetter}` }} style={styles.img} />
             </TouchableOpacity>
         </View>
     )

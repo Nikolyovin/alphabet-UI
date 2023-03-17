@@ -10,8 +10,10 @@ const AlphabetScreen = ({ navigation }: any) => {
     const { letters } = useAppSelector(state => state.alphabet)
     const { getLettersFetch } = useActions()
 
-    React.useEffect(() => {}, [])
-    getLettersFetch()
+    React.useEffect(() => {
+        getLettersFetch()
+    }, [])
+
     console.log('letters', letters)
 
     return (
