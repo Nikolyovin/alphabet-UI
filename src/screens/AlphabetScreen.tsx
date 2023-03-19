@@ -1,10 +1,10 @@
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Letter from '../components/Letter'
 import { COLORS } from '../common/constants'
 import { useAppSelector } from '../hooks/redux'
-import { useDispatch } from 'react-redux'
 import { useActions } from '../hooks/actions'
+import Loading from '../components/Loading'
 
 const AlphabetScreen = ({ navigation }: any) => {
     const { letters } = useAppSelector(state => state.alphabet)
@@ -15,6 +15,7 @@ const AlphabetScreen = ({ navigation }: any) => {
     }, [])
 
     console.log('letters', letters)
+    if (!letters.length) return <Loading />
 
     return (
         <View style={styles.wrap}>

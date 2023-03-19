@@ -1,6 +1,5 @@
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import SectionGame from '../components/SectionGame'
 import { useActions } from '../hooks/actions'
 import { URL_SERVER } from '../common/constants'
 

@@ -1,18 +1,20 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ILetter } from '../../types/types'
+import { currentPictureAndNameType, ILetter } from '../../types/types'
 
 type InitialStateType = {
     isModalForPicture: boolean
     letters: ILetter[]
     isLoading: boolean
     currentLetter: string
+    currentPictureAndName: currentPictureAndNameType
 }
 
 const initialState: InitialStateType = {
     isModalForPicture: false,
     letters: [],
     isLoading: false,
-    currentLetter: ''
+    currentLetter: '',
+    currentPictureAndName: { url: '', name: '' }
 }
 
 export const alphabetSlice = createSlice({
@@ -31,6 +33,9 @@ export const alphabetSlice = createSlice({
         },
         setCurrentLetter(state, action: PayloadAction<string>) {
             state.currentLetter = action.payload
+        },
+        setCurrentPicture(state, action: PayloadAction<currentPictureAndNameType>) {
+            state.currentPictureAndName = action.payload
         }
     }
 })

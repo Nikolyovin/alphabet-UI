@@ -13,15 +13,16 @@ import { ILetter } from '../types/types'
 const LetterScreen: React.FC = () => {
     const { currentLetter, letters } = useAppSelector(state => state.alphabet)
 
-    const { isOpenModalForPicture } = useActions()
+    const { isOpenModalForPicture, setCurrentPicture } = useActions()
 
-    const TouchPicture: () => void = () => {
+    const TouchPicture: (url: string, name: string) => void = (url, name) => {
+        setCurrentPicture({ url, name })
         isOpenModalForPicture(true)
     }
 
     const filteredLetters: ILetter = letters.find(({ _id }) => _id === currentLetter)
 
-    const { pictureLetter, picture1, picture2, picture3 } = filteredLetters
+    const { pictureLetter, picture1, picture2, picture3, word1, word2, word3 } = filteredLetters
 
     return (
         <View style={styles.container}>
@@ -29,13 +30,22 @@ const LetterScreen: React.FC = () => {
                 <Image source={{ uri: `${URL_SERVER}${pictureLetter}` }} style={styles.letterPicture} />
             </TouchableOpacity>
             <View style={styles.wordsWrap}>
-                <TouchableOpacity style={styles.buttonWord} onPress={TouchPicture}>
+                <TouchableOpacity
+                    style={styles.buttonWord}
+                    onPress={() => TouchPicture(`${URL_SERVER}${picture1}`, word1)}
+                >
                     <Image source={{ uri: `${URL_SERVER}${picture1}` }} style={styles.picture} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonWord} onPress={TouchPicture}>
+                <TouchableOpacity
+                    style={styles.buttonWord}
+                    onPress={() => TouchPicture(`${URL_SERVER}${picture2}`, word2)}
+                >
                     <Image source={{ uri: `${URL_SERVER}${picture2}` }} style={styles.picture} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonWord} onPress={TouchPicture}>
+                <TouchableOpacity
+                    style={styles.buttonWord}
+                    onPress={() => TouchPicture(`${URL_SERVER}${picture3}`, word3)}
+                >
                     <Image source={{ uri: `${URL_SERVER}${picture3}` }} style={styles.picture} />
                 </TouchableOpacity>
             </View>

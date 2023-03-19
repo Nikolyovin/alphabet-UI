@@ -14,3 +14,8 @@ export interface ILetter {
     picture3: string
     __v: number
 }
+
+export type currentPictureAndNameType = {
+    url: string
+    name: string
+}
