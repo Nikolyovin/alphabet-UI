@@ -33,6 +33,8 @@ const styles = StyleSheet.create({
         padding: 30,
         flexDirection: 'row',
         flexWrap: 'wrap',
-        backgroundColor: COLORS.FON
+        backgroundColor: COLORS.FON,
+        height: '100%',
+        justifyContent: 'center'
     }
 })
