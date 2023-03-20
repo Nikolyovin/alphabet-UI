@@ -13,7 +13,7 @@ const Navigation = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name='Start' component={StartScreen} options={{ title: 'Старт' }} />
+                <Stack.Screen name='Start' component={StartScreen} options={{ title: 'Старт', headerShown: false }} />
                 <Stack.Screen name='Home' component={HomeScreen} options={{ title: 'Меню' }} />
                 <Stack.Screen name='Alphabet' component={AlphabetScreen} options={{ title: 'Алфавит' }} />
                 <Stack.Screen name='Letter' component={LetterScreen} options={{ title: 'Буква' }} />
