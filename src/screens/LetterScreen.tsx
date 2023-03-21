@@ -5,7 +5,8 @@ import ModalForPicture from '../components/ModalForPicture'
 import { useActions } from '../hooks/actions'
 import { useAppSelector } from '../hooks/redux'
 import { ILetter } from '../types/types'
-import Sound from 'react-native-sound'
+import { Audio } from 'expo-av'
+// import Sound from 'react-native-sound'
 
 const LetterScreen: React.FC = () => {
     const { currentLetter, letters } = useAppSelector(state => state.alphabet)
@@ -22,14 +23,14 @@ const LetterScreen: React.FC = () => {
     const { pictureLetter, picture1, picture2, picture3, word1, word2, word3, voiceLetter, voice1, voice2, voice3 } =
         filteredLetters
 
-    const playWav: (url: string) => void = url => {
-        const track = new Sound(url, null, e => {
-            if (e) {
-                console.log('error loading track:', e)
-            } else {
-                track.play()
-            }
+    const playWav: (url: string) => void = async url => {
+        const sound = new Audio.Sound()
+
+        await sound.loadAsync({
+            uri: `${URL_SERVER}${url}`
         })
+
+        await sound.playAsync()
     }
 
     return (
