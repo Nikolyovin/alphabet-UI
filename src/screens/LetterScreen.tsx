@@ -1,50 +1,67 @@
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { COLORS, URL_SERVER } from '../common/constants'
-import img from '../../assets/a.png'
-import sharp from '../../assets/sharp.jpg'
-import pineapple from '../../assets/pineapple.jpg'
-import bus from '../../assets/bus.jpg'
 import ModalForPicture from '../components/ModalForPicture'
 import { useActions } from '../hooks/actions'
 import { useAppSelector } from '../hooks/redux'
 import { ILetter } from '../types/types'
+import Sound from 'react-native-sound'
 
 const LetterScreen: React.FC = () => {
     const { currentLetter, letters } = useAppSelector(state => state.alphabet)
 
     const { isOpenModalForPicture, setCurrentPicture } = useActions()
 
-    const TouchPicture: (url: string, name: string) => void = (url, name) => {
+    const touchPicture: (url: string, name: string) => void = (url, name) => {
         setCurrentPicture({ url, name })
         isOpenModalForPicture(true)
     }
 
     const filteredLetters: ILetter = letters.find(({ _id }) => _id === currentLetter)
 
-    const { pictureLetter, picture1, picture2, picture3, word1, word2, word3 } = filteredLetters
+    const { pictureLetter, picture1, picture2, picture3, word1, word2, word3, voiceLetter, voice1, voice2, voice3 } =
+        filteredLetters
+
+    const playWav: (url: string) => void = url => {
+        const track = new Sound(url, null, e => {
+            if (e) {
+                console.log('error loading track:', e)
+            } else {
+                track.play()
+            }
+        })
+    }
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.buttonLetter}>
+            <TouchableOpacity style={styles.buttonLetter} onPress={() => playWav(voiceLetter)}>
                 <Image source={{ uri: `${URL_SERVER}${pictureLetter}` }} style={styles.letterPicture} />
             </TouchableOpacity>
             <View style={styles.wordsWrap}>
                 <TouchableOpacity
                     style={styles.buttonWord}
-                    onPress={() => TouchPicture(`${URL_SERVER}${picture1}`, word1)}
+                    onPress={() => {
+                        touchPicture(`${URL_SERVER}${picture1}`, word1)
+                        playWav(voice1)
+                    }}
                 >
                     <Image source={{ uri: `${URL_SERVER}${picture1}` }} style={styles.picture} />
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.buttonWord}
-                    onPress={() => TouchPicture(`${URL_SERVER}${picture2}`, word2)}
+                    onPress={() => {
+                        touchPicture(`${URL_SERVER}${picture2}`, word2)
+                        playWav(voice2)
+                    }}
                 >
                     <Image source={{ uri: `${URL_SERVER}${picture2}` }} style={styles.picture} />
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.buttonWord}
-                    onPress={() => TouchPicture(`${URL_SERVER}${picture3}`, word3)}
+                    onPress={() => {
+                        touchPicture(`${URL_SERVER}${picture3}`, word3)
+                        playWav(voice3)
+                    }}
                 >
                     <Image source={{ uri: `${URL_SERVER}${picture3}` }} style={styles.picture} />
                 </TouchableOpacity>
